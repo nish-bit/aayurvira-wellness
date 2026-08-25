@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { submitRequestCall } from "@/lib/submitEnquiry";
+import { submitEnquiry } from "@/lib/submitEnquiry";
 
 interface QuickEnquiryFormProps {
   source?: string;
@@ -31,10 +31,10 @@ export default function QuickEnquiryForm({ source = "Website" }: QuickEnquiryFor
 
     setStatus("submitting");
     try {
-      await submitRequestCall({
+      await submitEnquiry({
         name: name.trim(),
         phone: phone.trim(),
-        source
+    
       });
       setStatus("success");
     } catch (error) {
