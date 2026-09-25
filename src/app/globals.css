@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --color-forest: #17392a;
+  --color-forest-light: #2c5f43;
+  --color-forest-pale: #e6ede4;
+  --color-saffron: #bd7d0e;
+  --color-saffron-dark: #935f09;
+  --color-ivory: #faf6ec;
+  --color-ivory-deep: #f0e9d8;
+  --color-ink: #1c2620;
+  --color-ink-soft: #4a5650;
+  --color-line: #ded2ad;
+
+  --font-display-en: var(--font-lora), Georgia, serif;
+  --font-body-en: var(--font-work-sans), system-ui, sans-serif;
+  --font-display-hi: var(--font-noto-serif-dev), var(--font-lora), Georgia, serif;
+  --font-body-hi: var(--font-hind), var(--font-work-sans), system-ui, sans-serif;
+
+  --font-display: var(--font-display-hi);
+  --font-body: var(--font-body-hi);
+}
+
+html[data-lang="en"] {
+  --font-display: var(--font-display-en);
+  --font-body: var(--font-body-en);
+}
+
+@theme inline {
+  --color-forest: var(--color-forest);
+  --color-forest-light: var(--color-forest-light);
+  --color-forest-pale: var(--color-forest-pale);
+  --color-saffron: var(--color-saffron);
+  --color-saffron-dark: var(--color-saffron-dark);
+  --color-ivory: var(--color-ivory);
+  --color-ivory-deep: var(--color-ivory-deep);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-line: var(--color-line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  scroll-margin-top: 5.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-saffron);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
